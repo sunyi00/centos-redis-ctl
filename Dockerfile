@@ -16,7 +16,7 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip wget'; \
     && unzip redis-ctl.zip \
     && rm redis-ctl.zip \
     && cd redis-ctl-master/ \
-    && pip install -r requirements.txt \
+    && pip install -r requirements.txt
 
 EXPOSE 5000
 CMD [ "python", "main.py" ]
