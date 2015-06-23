@@ -5,6 +5,8 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip wget'; \
     && yum install -y epel-release \
     && yum install -y $buildDeps \
     && yum install -y python-devel \
+    && yum install -y python-pip \
+    && pip install pip --upgrade \
     && wget http://influxdb.s3.amazonaws.com/influxdb-0.9.0-1.x86_64.rpm \
     && rpm -ivh influxdb-0.9.0-1.x86_64.rpm \
     && rm -f influxdb-0.9.0-1.x86_64.rpm \
