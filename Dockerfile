@@ -1,6 +1,6 @@
 FROM centos:7.1.1503
 
-RUN buildDeps='make gcc gcc-c++ git tar unzip libevent clang libstdc++-static'; \
+RUN buildDeps='make gcc gcc-c++ git tar unzip wget'; \
     set -x \
     && yum install -y epel-release \
     && yum install -y $buildDeps \
