@@ -5,7 +5,9 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip libevent clang libstdc++-static'; 
     && yum install -y epel-release \
     && yum install -y $buildDeps \
     && yum install -y python-devel \
-    && yum install -y influxdb \
+    && wget http://influxdb.s3.amazonaws.com/influxdb-0.9.0-1.x86_64.rpm \
+    && rpm -ivh influxdb-0.9.0-1.x86_64.rpm \
+    && rm -f influxdb-0.9.0-1.x86_64.rpm \
     && yum clean -y all && rm -rf /var/cache/yum/* \
     && cd /root/ \
     && curl -L https://github.com/HunanTV/redis-ctl/archive/master.zip -o redis-ctl.zip \
